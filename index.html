@@ -1,0 +1,1815 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nusantara Store – Belanja produk lifestyle premium pilihan terbaik. Temukan koleksi eksklusif kami dengan harga terjangkau dan kualitas terpercaya."
+    />
+    <title>Nusantara Store – Belanja Lifestyle Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ===== ANNOUNCEMENT BAR ===== -->
+    <div class="announcement-bar" id="announcement-bar">
+      <p>
+        🎉 Gratis ongkir untuk pembelian di atas Rp 150.000 &nbsp;|&nbsp;
+        Gunakan kode: <strong>GRATIS150</strong>
+      </p>
+      <button
+        class="close-announcement"
+        id="closeAnn"
+        aria-label="Tutup pengumuman"
+      >
+        ✕
+      </button>
+    </div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#" class="logo" aria-label="Nusantara Store - Halaman Utama">
+          <span class="logo-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 2L4 8V14C4 19.5 8.5 24.7 14 26C19.5 24.7 24 19.5 24 14V8L14 2Z"
+                fill="currentColor"
+                opacity="0.15"
+              />
+              <path
+                d="M14 2L4 8V14C4 19.5 8.5 24.7 14 26C19.5 24.7 24 19.5 24 14V8L14 2Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linejoin="round"
+              />
+              <circle cx="14" cy="14" r="3" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="logo-text"
+            >Nusantara<span class="logo-accent">Store</span></span
+          >
+        </a>
+
+        <nav class="nav-links" id="nav-links" aria-label="Navigasi utama">
+          <a href="#beranda" class="nav-link active">Beranda</a>
+          <a href="#kategori" class="nav-link">Kategori</a>
+          <a href="#produk" class="nav-link">Produk</a>
+          <a href="#promo" class="nav-link">Promo</a>
+          <a href="#tentang" class="nav-link">Tentang Kami</a>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="nav-icon-btn" id="searchBtn" aria-label="Cari produk">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </button>
+          <button class="nav-icon-btn" id="wishlistBtn" aria-label="Wishlist">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              />
+            </svg>
+          </button>
+          <button
+            class="nav-icon-btn cart-btn"
+            id="cartBtn"
+            aria-label="Keranjang belanja"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            <span class="cart-badge" id="cartBadge">3</span>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Buka menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Cari produk, kategori, atau merek..."
+            autocomplete="off"
+          />
+          <button class="search-submit" aria-label="Cari">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+          </button>
+          <button
+            class="search-close"
+            id="searchClose"
+            aria-label="Tutup pencarian"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="search-suggestions">
+          <span>Populer:</span>
+          <a href="#">Mug Keramik</a>
+          <a href="#">Notebook</a>
+          <a href="#">Earbuds</a>
+          <a href="#">Lilin Aromaterapi</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== HERO SECTION ===== -->
+      <section class="hero" id="beranda">
+        <div class="hero-bg">
+          <div class="hero-blob blob-1"></div>
+          <div class="hero-blob blob-2"></div>
+          <div class="hero-blob blob-3"></div>
+        </div>
+        <div class="hero-container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="badge-dot"></span>
+              Koleksi Baru · November 2026
+            </div>
+            <h1 class="hero-title">
+              Temukan Gaya<br /><em>Hidupmu</em> di Sini
+            </h1>
+            <p class="hero-subtitle">
+              Produk lifestyle pilihan yang dirancang untuk menemani
+              hari-harimu. Dari dapur hingga meja kerja, kami punya semua yang
+              kamu butuhkan.
+            </p>
+            <div class="hero-cta">
+              <a href="#produk" class="btn btn-primary">Belanja Sekarang</a>
+              <a href="#kategori" class="btn btn-ghost">Lihat Kategori</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <strong>12.000+</strong>
+                <span>Pelanggan Puas</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <strong>500+</strong>
+                <span>Produk Tersedia</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <strong>4.9★</strong>
+                <span>Rating Rata-rata</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-card-floating card-1">
+              <div
+                class="floating-card-img"
+                style="
+                  background: linear-gradient(135deg, #f9d29d 0%, #ffd4a0 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#b7620a"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                  <line x1="6" y1="2" x2="6" y2="4" />
+                  <line x1="10" y1="2" x2="10" y2="4" />
+                  <line x1="14" y1="2" x2="14" y2="4" />
+                </svg>
+              </div>
+              <div class="floating-card-info">
+                <p class="fc-name">Mug Keramik</p>
+                <p class="fc-price">Rp 89.000</p>
+              </div>
+            </div>
+            <div class="hero-card-floating card-2">
+              <div
+                class="floating-card-img"
+                style="
+                  background: linear-gradient(135deg, #c8f7dc 0%, #a8edce 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#146b3a"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="floating-card-info">
+                <p class="fc-name">Candle Set</p>
+                <p class="fc-price">Rp 125.000</p>
+              </div>
+            </div>
+            <div class="hero-card-floating card-3">
+              <div
+                class="floating-card-img"
+                style="
+                  background: linear-gradient(135deg, #ddd6fe 0%, #c4b5fd 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#5b21b6"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+              </div>
+              <div class="floating-card-info">
+                <p class="fc-name">Notebook</p>
+                <p class="fc-price">Rp 65.000</p>
+              </div>
+            </div>
+
+            <div class="hero-main-visual">
+              <div class="visual-circle">
+                <div class="visual-inner">
+                  <svg
+                    width="90"
+                    height="90"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="1"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    opacity="0.6"
+                  >
+                    <path
+                      d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"
+                    />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+          <div class="scroll-dot"></div>
+          <span>Scroll</span>
+        </div>
+      </section>
+
+      <!-- ===== TRUST BADGES ===== -->
+      <section class="trust-section">
+        <div class="container">
+          <div class="trust-grid">
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="1" y="3" width="15" height="13" />
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                  <circle cx="5.5" cy="18.5" r="2.5" />
+                  <circle cx="18.5" cy="18.5" r="2.5" />
+                </svg>
+              </div>
+              <div class="trust-text">
+                <h3>Gratis Ongkir</h3>
+                <p>Minimal pembelian Rp 150.000</p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div class="trust-text">
+                <h3>Garansi Produk</h3>
+                <p>Jaminan kualitas 30 hari</p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              </div>
+              <div class="trust-text">
+                <h3>Customer Support</h3>
+                <p>Siap membantu 7 hari/minggu</p>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-icon">
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                  <line x1="1" y1="10" x2="23" y2="10" />
+                </svg>
+              </div>
+              <div class="trust-text">
+                <h3>Pembayaran Aman</h3>
+                <p>Berbagai metode pembayaran</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== KATEGORI SECTION ===== -->
+      <section class="section kategori-section" id="kategori">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Jelajahi</p>
+            <h2 class="section-title">Belanja Berdasarkan Kategori</h2>
+            <p class="section-desc">
+              Temukan produk yang tepat sesuai kebutuhanmu
+            </p>
+          </div>
+          <div class="kategori-grid">
+            <a
+              href="#produk"
+              class="kategori-card featured-cat"
+              data-filter="dapur"
+            >
+              <div
+                class="kat-visual"
+                style="
+                  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+                "
+              >
+                <svg
+                  width="48"
+                  height="48"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e65100"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                  <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                  <line x1="6" y1="2" x2="6" y2="4" />
+                  <line x1="10" y1="2" x2="10" y2="4" />
+                  <line x1="14" y1="2" x2="14" y2="4" />
+                </svg>
+              </div>
+              <div class="kat-info">
+                <h3>Dapur & Minum</h3>
+                <p>48 produk</p>
+              </div>
+              <span class="kat-arrow">→</span>
+            </a>
+            <a href="#produk" class="kategori-card" data-filter="aksesoris">
+              <div
+                class="kat-visual"
+                style="
+                  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#1565c0"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+              </div>
+              <div class="kat-info">
+                <h3>Aksesoris</h3>
+                <p>63 produk</p>
+              </div>
+              <span class="kat-arrow">→</span>
+            </a>
+            <a href="#produk" class="kategori-card" data-filter="tulis">
+              <div
+                class="kat-visual"
+                style="
+                  background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#6a1b9a"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                </svg>
+              </div>
+              <div class="kat-info">
+                <h3>Alat Tulis</h3>
+                <p>35 produk</p>
+              </div>
+              <span class="kat-arrow">→</span>
+            </a>
+            <a href="#produk" class="kategori-card" data-filter="rumah">
+              <div
+                class="kat-visual"
+                style="
+                  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#2e7d32"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                  <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+              </div>
+              <div class="kat-info">
+                <h3>Dekorasi Rumah</h3>
+                <p>92 produk</p>
+              </div>
+              <span class="kat-arrow">→</span>
+            </a>
+            <a href="#produk" class="kategori-card" data-filter="tech">
+              <div
+                class="kat-visual"
+                style="
+                  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#880e4f"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                  <line x1="12" y1="18" x2="12.01" y2="18" />
+                </svg>
+              </div>
+              <div class="kat-info">
+                <h3>Elektronik</h3>
+                <p>29 produk</p>
+              </div>
+              <span class="kat-arrow">→</span>
+            </a>
+            <a href="#produk" class="kategori-card" data-filter="kecantikan">
+              <div
+                class="kat-visual"
+                style="
+                  background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#f57f17"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </div>
+              <div class="kat-info">
+                <h3>Perawatan Diri</h3>
+                <p>54 produk</p>
+              </div>
+              <span class="kat-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PRODUK SECTION ===== -->
+      <section class="section produk-section" id="produk">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Pilihan Kami</p>
+            <h2 class="section-title">Produk Terlaris Minggu Ini</h2>
+            <p class="section-desc">
+              Dipilih berdasarkan ulasan dan penjualan terbaik dari pelanggan
+              kami
+            </p>
+          </div>
+
+          <!-- Filter tabs -->
+          <div class="filter-tabs" role="tablist" aria-label="Filter produk">
+            <button
+              class="filter-tab active"
+              data-category="semua"
+              role="tab"
+              aria-selected="true"
+            >
+              Semua
+            </button>
+            <button
+              class="filter-tab"
+              data-category="dapur"
+              role="tab"
+              aria-selected="false"
+            >
+              Dapur
+            </button>
+            <button
+              class="filter-tab"
+              data-category="tulis"
+              role="tab"
+              aria-selected="false"
+            >
+              Alat Tulis
+            </button>
+            <button
+              class="filter-tab"
+              data-category="tech"
+              role="tab"
+              aria-selected="false"
+            >
+              Elektronik
+            </button>
+            <button
+              class="filter-tab"
+              data-category="rumah"
+              role="tab"
+              aria-selected="false"
+            >
+              Rumah
+            </button>
+            <button
+              class="filter-tab"
+              data-category="kecantikan"
+              role="tab"
+              aria-selected="false"
+            >
+              Perawatan
+            </button>
+          </div>
+
+          <div class="produk-grid" id="produkGrid">
+            <!-- PRODUK 1 -->
+            <article class="produk-card" data-category="dapur">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #fff3e0 0%,
+                      #ffe0b2 60%,
+                      #ffcc80 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#e65100"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M17 8h1a4 4 0 1 1 0 8h-1" />
+                    <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z" />
+                    <line x1="6" y1="2" x2="6" y2="4" />
+                    <line x1="10" y1="2" x2="10" y2="4" />
+                    <line x1="14" y1="2" x2="14" y2="4" />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-new">Baru</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="1"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Dapur & Minum</div>
+                <h3 class="produk-nama">
+                  <a href="#" aria-label="Mug Keramik Klasik - Lihat detail"
+                    >Mug Keramik Klasik</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.8 dari 5">★★★★★</div>
+                  <span class="rating-count">(128)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 89.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 2 -->
+            <article class="produk-card" data-category="aksesoris">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #efebe9 0%,
+                      #d7ccc8 60%,
+                      #bcaaa4 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#4e342e"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect x="2" y="5" width="20" height="14" rx="2" />
+                    <line x1="2" y1="10" x2="22" y2="10" />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-sale">-20%</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="2"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Aksesoris</div>
+                <h3 class="produk-nama">
+                  <a href="#" aria-label="Dompet Kulit Genuine - Lihat detail"
+                    >Dompet Kulit Genuine</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.9 dari 5">★★★★★</div>
+                  <span class="rating-count">(256)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 185.000</span>
+                    <span class="harga-coret">Rp 230.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 3 -->
+            <article class="produk-card" data-category="rumah">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #f1f8e9 0%,
+                      #dcedc8 60%,
+                      #c5e1a5 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#33691e"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-popular">Terlaris</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="3"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Dekorasi Rumah</div>
+                <h3 class="produk-nama">
+                  <a href="#" aria-label="Lilin Aromaterapi Set - Lihat detail"
+                    >Lilin Aromaterapi Set</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.7 dari 5">★★★★☆</div>
+                  <span class="rating-count">(89)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 125.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 4 -->
+            <article class="produk-card" data-category="tulis">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #ede7f6 0%,
+                      #d1c4e9 60%,
+                      #b39ddb 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#4527a0"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                  </svg>
+                </div>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="4"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Alat Tulis</div>
+                <h3 class="produk-nama">
+                  <a
+                    href="#"
+                    aria-label="Notebook Hardcover Premium - Lihat detail"
+                    >Notebook Hardcover Premium</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.8 dari 5">★★★★★</div>
+                  <span class="rating-count">(312)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 65.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 5 -->
+            <article class="produk-card" data-category="rumah">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #fff8e1 0%,
+                      #ffecb3 60%,
+                      #ffe082 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#e65100"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 3l14 0" />
+                    <path d="M5 3l1.5 9h11L19 3" />
+                    <rect x="8" y="12" width="8" height="9" />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-sale">-15%</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="5"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Dekorasi Rumah</div>
+                <h3 class="produk-nama">
+                  <a href="#" aria-label="Rak Kayu Mini - Lihat detail"
+                    >Rak Kayu Mini</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.6 dari 5">★★★★☆</div>
+                  <span class="rating-count">(74)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 210.000</span>
+                    <span class="harga-coret">Rp 245.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 6 -->
+            <article class="produk-card" data-category="tech">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #e8eaf6 0%,
+                      #c5cae9 60%,
+                      #9fa8da 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#1a237e"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                    <path
+                      d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                    />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-new">Baru</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="6"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Elektronik</div>
+                <h3 class="produk-nama">
+                  <a
+                    href="#"
+                    aria-label="Earbuds Wireless Premium - Lihat detail"
+                    >Earbuds Wireless Premium</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.9 dari 5">★★★★★</div>
+                  <span class="rating-count">(445)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 350.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 7 -->
+            <article class="produk-card" data-category="kecantikan">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #fce4ec 0%,
+                      #f8bbd0 60%,
+                      #f48fb1 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#880e4f"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-popular">Favorit</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="7"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Perawatan Diri</div>
+                <h3 class="produk-nama">
+                  <a href="#" aria-label="Hand Cream Mewah - Lihat detail"
+                    >Hand Cream Mewah</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.8 dari 5">★★★★★</div>
+                  <span class="rating-count">(198)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 95.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUK 8 -->
+            <article class="produk-card" data-category="dapur">
+              <div class="produk-img-wrap">
+                <div
+                  class="produk-img"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      #e0f7fa 0%,
+                      #b2ebf2 60%,
+                      #80deea 100%
+                    );
+                  "
+                >
+                  <svg
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#006064"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h1" />
+                    <path d="M14 3h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-1" />
+                    <path d="M9 10h6" />
+                    <path d="M9 12v8" />
+                    <path d="M15 12v8" />
+                    <path d="M9 20h6" />
+                    <path d="M6 15h12" />
+                  </svg>
+                </div>
+                <span class="produk-badge badge-sale">-25%</span>
+                <button class="wishlist-btn" aria-label="Tambah ke wishlist">
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    />
+                  </svg>
+                </button>
+                <div class="produk-hover-actions">
+                  <button
+                    class="quick-view-btn"
+                    data-product="8"
+                    aria-label="Lihat cepat"
+                  >
+                    Lihat Cepat
+                  </button>
+                </div>
+              </div>
+              <div class="produk-body">
+                <div class="produk-kat">Dapur & Minum</div>
+                <h3 class="produk-nama">
+                  <a href="#" aria-label="Tumbler Stainless - Lihat detail"
+                    >Tumbler Stainless 500ml</a
+                  >
+                </h3>
+                <div class="produk-rating">
+                  <div class="stars" aria-label="Rating 4.7 dari 5">★★★★☆</div>
+                  <span class="rating-count">(367)</span>
+                </div>
+                <div class="produk-footer">
+                  <div class="produk-harga">
+                    <span class="harga-asli">Rp 112.000</span>
+                    <span class="harga-coret">Rp 148.000</span>
+                  </div>
+                  <button
+                    class="btn-keranjang"
+                    aria-label="Tambah ke keranjang"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="12" y1="5" x2="12" y2="19" />
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="lihat-semua-wrap">
+            <a href="#" class="btn btn-outline-primary"
+              >Lihat Semua Produk &nbsp;→</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROMO BANNER ===== -->
+      <section class="promo-banner" id="promo">
+        <div class="container">
+          <div class="promo-inner">
+            <div class="promo-content">
+              <div class="promo-eyebrow">🔥 Flash Sale · Berakhir dalam</div>
+              <h2 class="promo-title">
+                Diskon Besar-Besaran<br />Hingga
+                <span class="promo-highlight">50% OFF</span>
+              </h2>
+              <p class="promo-desc">
+                Jangan lewatkan kesempatan emas ini. Dapatkan produk impianmu
+                dengan harga terbaik hari ini saja.
+              </p>
+              <div class="countdown" id="countdown" aria-label="Waktu tersisa">
+                <div class="count-box">
+                  <span class="count-num" id="count-hours">08</span>
+                  <span class="count-label">Jam</span>
+                </div>
+                <span class="count-sep">:</span>
+                <div class="count-box">
+                  <span class="count-num" id="count-mins">45</span>
+                  <span class="count-label">Menit</span>
+                </div>
+                <span class="count-sep">:</span>
+                <div class="count-box">
+                  <span class="count-num" id="count-secs">00</span>
+                  <span class="count-label">Detik</span>
+                </div>
+              </div>
+              <a href="#produk" class="btn btn-promo">Belanja Sekarang</a>
+            </div>
+            <div class="promo-visual">
+              <div class="promo-circle">
+                <div class="promo-circle-inner">
+                  <span class="promo-pct">50%</span>
+                  <span class="promo-off">OFF</span>
+                </div>
+              </div>
+              <div class="promo-floating-tag tag-1">Flash Sale!</div>
+              <div class="promo-floating-tag tag-2">Limited Time</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ULASAN SECTION ===== -->
+      <section class="section ulasan-section">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Testimoni</p>
+            <h2 class="section-title">Apa Kata Pelanggan Kami</h2>
+            <p class="section-desc">
+              Kepuasan pelanggan adalah prioritas utama kami
+            </p>
+          </div>
+          <div class="ulasan-grid">
+            <div class="ulasan-card">
+              <div class="ulasan-stars" aria-label="Rating 5 dari 5">★★★★★</div>
+              <p class="ulasan-teks">
+                "Kualitas produknya beneran bagus banget! Mukanya glowing,
+                harganya juga masuk akal. Udah order 3x dan nggak kapok sama
+                sekali."
+              </p>
+              <div class="ulasan-author">
+                <div
+                  class="ulasan-avatar"
+                  style="background: linear-gradient(135deg, #f9a8d4, #f43f5e)"
+                >
+                  AR
+                </div>
+                <div class="ulasan-info">
+                  <strong>Anisa Rahmadhani</strong>
+                  <span>Jakarta · Pembeli Terverifikasi ✓</span>
+                </div>
+              </div>
+            </div>
+            <div class="ulasan-card ulasan-featured">
+              <div class="ulasan-quote-icon">"</div>
+              <div class="ulasan-stars" aria-label="Rating 5 dari 5">★★★★★</div>
+              <p class="ulasan-teks">
+                "Pengiriman cepet banget, packing-nya rapi dan aman. Earbuds-nya
+                suaranya jernih, noise cancelling-nya juga nendang. Recommended
+                banget buat yang kerja WFH!"
+              </p>
+              <div class="ulasan-author">
+                <div
+                  class="ulasan-avatar"
+                  style="background: linear-gradient(135deg, #93c5fd, #3b82f6)"
+                >
+                  BP
+                </div>
+                <div class="ulasan-info">
+                  <strong>Budi Pratama</strong>
+                  <span>Bandung · Pembeli Terverifikasi ✓</span>
+                </div>
+              </div>
+            </div>
+            <div class="ulasan-card">
+              <div class="ulasan-stars" aria-label="Rating 4 dari 5">★★★★☆</div>
+              <p class="ulasan-teks">
+                "Mug-nya cantik banget, fotonya juga 100% sesuai asli. Customer
+                service-nya ramah dan responsif. Suka banget belanja di sini!"
+              </p>
+              <div class="ulasan-author">
+                <div
+                  class="ulasan-avatar"
+                  style="background: linear-gradient(135deg, #6ee7b7, #10b981)"
+                >
+                  DS
+                </div>
+                <div class="ulasan-info">
+                  <strong>Devi Susanti</strong>
+                  <span>Surabaya · Pembeli Terverifikasi ✓</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== NEWSLETTER SECTION ===== -->
+      <section class="newsletter-section">
+        <div class="container">
+          <div class="newsletter-inner">
+            <div class="newsletter-content">
+              <h2>Dapatkan Penawaran Eksklusif</h2>
+              <p>
+                Daftar newsletter kami dan jadilah yang pertama tahu tentang
+                promo, produk baru, dan tips belanja pintar.
+              </p>
+            </div>
+            <form class="newsletter-form" id="newsletterForm" novalidate>
+              <div class="form-group">
+                <input
+                  type="email"
+                  id="emailInput"
+                  name="email"
+                  placeholder="Masukkan email kamu..."
+                  autocomplete="email"
+                  required
+                  aria-label="Alamat email"
+                />
+                <button type="submit" class="btn btn-newsletter">
+                  Langganan
+                </button>
+              </div>
+              <p class="form-note">
+                Tidak ada spam. Berhenti berlangganan kapan saja. 🔒
+              </p>
+              <p class="form-success" id="formSuccess" style="display: none">
+                🎉 Terima kasih! Kamu telah berhasil berlangganan.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="tentang">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="#" class="logo footer-logo" aria-label="Nusantara Store">
+              <span class="logo-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 2L4 8V14C4 19.5 8.5 24.7 14 26C19.5 24.7 24 19.5 24 14V8L14 2Z"
+                    fill="currentColor"
+                    opacity="0.2"
+                  />
+                  <path
+                    d="M14 2L4 8V14C4 19.5 8.5 24.7 14 26C19.5 24.7 24 19.5 24 14V8L14 2Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="14" cy="14" r="3" fill="currentColor" />
+                </svg>
+              </span>
+              <span class="logo-text"
+                >Nusantara<span class="logo-accent">Store</span></span
+              >
+            </a>
+            <p class="footer-tagline">
+              Produk lifestyle terpilih untuk menemani hari-harimu dengan lebih
+              bermakna.
+            </p>
+            <div class="footer-socials">
+              <a
+                href="https://www.instagram.com/63dbd5bb677c35ae71f5135d35f63c?utm_source=qr&fqnt=MXVmdGkzNWtsamE1NA%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="Instagram Nusantara Store"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="TikTok Nusantara Store"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="WhatsApp Nusantara Store"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label="YouTube Nusantara Store"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                  />
+                  <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-links-wrap">
+            <div class="footer-col">
+              <h4>Belanja</h4>
+              <ul>
+                <li><a href="#">Semua Produk</a></li>
+                <li><a href="#">Produk Baru</a></li>
+                <li><a href="#">Best Seller</a></li>
+                <li><a href="#">Promo & Diskon</a></li>
+                <li><a href="#">Bundle Hemat</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Layanan</h4>
+              <ul>
+                <li><a href="#">Cara Berbelanja</a></li>
+                <li><a href="#">Kebijakan Retur</a></li>
+                <li><a href="#">Lacak Pesanan</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Hubungi Kami</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Perusahaan</h4>
+              <ul>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Blog & Tips</a></li>
+                <li><a href="#">Karier</a></li>
+                <li><a href="#">Kebijakan Privasi</a></li>
+                <li><a href="#">Syarat & Ketentuan</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © 2026 Nusantara Store. Dibuat dengan ❤️ di Indonesia.
+          </p>
+          <div
+            class="payment-methods"
+            aria-label="Metode pembayaran yang diterima"
+          >
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">Mastercard</span>
+            <span class="payment-badge">GoPay</span>
+            <span class="payment-badge">OVO</span>
+            <span class="payment-badge">DANA</span>
+            <span class="payment-badge">COD</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+    <!-- Quick View Modal -->
+    <div
+      class="modal-overlay"
+      id="modalOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+      <div class="modal">
+        <button class="modal-close" id="modalClose" aria-label="Tutup">
+          ✕
+        </button>
+        <div class="modal-content" id="modalContent"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
